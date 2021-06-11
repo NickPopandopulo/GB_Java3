@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-public class Stats<T extends Number> {
+public class Stats<T extends Number & Serializable & Comparable<T>> {
     private static final double EPSILON = 0.00001;
     //private static final T CONSTANT = 10; низзя
     private final T[] numbers;

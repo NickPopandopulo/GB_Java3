@@ -14,7 +14,6 @@ public class StatsApp {
         System.out.println(statsDouble.avg());
 
 
-        Stats<Number> statsString = new Stats<>(1, 2,3.0, 4.0f, 5L);
 
         System.out.println(statsInt.sameAvg(statsInt2));
         System.out.println(statsInt.sameAvg(statsInt3));
