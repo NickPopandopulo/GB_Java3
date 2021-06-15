@@ -1,5 +1,6 @@
 package lesson5.homework;
 
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
@@ -10,6 +11,7 @@ public class Car implements Runnable {
     private static final CountDownLatch finishLatch;
     private static final CyclicBarrier barrier;
     private static boolean isFirstAtFinish = true;
+    private static final Object lock = new Object();
 
     static {
         CARS_COUNT = 0;
@@ -57,9 +59,11 @@ public class Car implements Runnable {
 
         // в предложенном к заданию коде почему-то не было написано сделать вывод победителя,
         // а в примере выполнения кода этот вывод есть
-        if (isFirstAtFinish) {
-            isFirstAtFinish = false;
-            System.out.println(this.name + " — WIN!");
+        synchronized (lock) {
+            if (isFirstAtFinish) {
+                isFirstAtFinish = false;
+                System.out.println(this.name + " — WIN!");
+            }
         }
 
         finishLatch.countDown();
