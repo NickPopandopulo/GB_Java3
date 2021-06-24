@@ -10,12 +10,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.derby.jdbc.EmbeddedDriver;
+//import org.apache.derby.jdbc.EmbeddedDriver;
 
 public class DatabaseApp {
 
 
-    static Driver derbyEmbeddedDriver = new EmbeddedDriver();
+//    static Driver derbyEmbeddedDriver = new EmbeddedDriver();
     static final String DATABASE_URL = "jdbc:sqlite:javadb.db";
     static Connection connection;
     static Statement statement;
