@@ -35,6 +35,10 @@ public class Homework6 {
      * Проверка на наличие хотя бы одной 1 и одной 4
      */
     public static boolean containsOneAndFour(int... array) {
+        for (int e : array) {
+            if (e != 1 && e != 4) return false;
+        }
+
         return Arrays.stream(array)
                 .filter(e -> e == 1 || e == 4)
                 .distinct()

@@ -23,7 +23,7 @@ public class Homework6Test {
 
     private static Stream<Arguments> source2ArraysWithFourAndOne() {
         return Stream.of(
-                Arguments.arguments(true, new int[]{1, 2, 3, 4}),
+                Arguments.arguments(false, new int[]{1, 2, 3, 4}),
                 Arguments.arguments(false, new int[]{1}),
                 Arguments.arguments(false, new int[]{4}),
                 Arguments.arguments(true, new int[]{1, 1, 4, 4}),
